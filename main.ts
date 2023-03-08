@@ -19,21 +19,22 @@ export { }
 //     username: "datdeptrai"
 // }
 // console.log(user);
-const a = 10;
-const b = 20;
-console.log(a + b);
+// const a = 10;
+// const b = 20;
+// console.log(a + b);
 
-function sum(a: number, b: number): number {
-    let result = a + b
-    return result
-}
-sum(10, 20)
+// function sum(a: number, b: number): number {
+//     let result = a + b
+//     return result
+// }
+// sum(10, 20)
 
-const project: { id?: number, name: string } = {
+const project: { id: number, name: string } = {
     id: 1,
-    name: "A"
+    name: "Du an 1"
 }
-function add(project: { id?: number, name: string }): { id?: number, name: string } {
-    return project;
+const getData = (props: { id: number, name: string }): { id: number, name: string } => {
+    console.log(props);
+    return props
 }
-add(project)
+getData(project)

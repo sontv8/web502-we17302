@@ -32,14 +32,7 @@ export { }
 
 
 
-// const projectList: { id: number, name: string }[] = [
-//     { id: 1, name: "Du an mau" },
-//     { id: 2, name: "Du an 1" }
-// ]
 
-// const get = (data: { id: number, name: string }[]): { id: number, name: string }[] => {
-//     return data
-// }
 
 // định nghĩa kiểu dữ liệu với interface
 
@@ -75,3 +68,31 @@ const project: Project = {
     image: "http://..."
 }
 getData(project)
+
+/* Array - Mảng*/
+
+// const projectList: { id: number, name: string }[] = [
+//     { id: 1, name: "Du an mau" },
+//     { id: 2, name: "Du an 1" }
+// ]
+
+// const get = (data: { id: number, name: string }[]): { id: number, name: string }[] => {
+//     return data
+// }
+
+interface ProjectList {
+    id: number,
+    name: string
+}
+// const projectList: Array<ProjectList> = [
+//     { id: 1, name: "abcd" }
+// ]
+const projectList: ProjectList[] = [
+    { id: 1, name: "Du an mau" },
+    { id: 2, name: "Du an 1" },
+    { id: 3, name: "Du an tot nghiep" }
+]
+/*
+    tạo 1 hàm để hiển thị
+    sử dụng map và hiển thị dữ liệu của mảng (console.log)
+*/ 

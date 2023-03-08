@@ -95,4 +95,31 @@ const projectList: ProjectList[] = [
 /*
     tạo 1 hàm để hiển thị
     sử dụng map và hiển thị dữ liệu của mảng (console.log)
-*/ 
+*/
+
+/* Function */
+interface SumFunction {
+    (a: number, b: number): number
+}
+
+const sum: SumFunction = (a, b) => {
+    return a + b
+}
+sum(1, 20)
+
+// định nghĩa kiểu dữ liệu với type
+/* Object */
+type Product = {
+    id: number,
+    name: string
+}
+const getProduct = (props: Product): Product => {
+    return props
+}
+
+/* Array */
+type ProductList = [number]
+const productList: ProductList = [1, 2, 3]
+// trong trường hợp này đang báo lỗi, vậy xử lý lỗi này như thế nào -> buổi sau sẽ nói ahihi
+
+/* Function */

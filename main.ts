@@ -29,10 +29,6 @@ function sum(a: number, b: number): number {
 }
 sum(10, 20)
 
-interface IProduct {
-    id?: number, name: string
-}
-
 const project: { id?: number, name: string } = {
     id: 1,
     name: "A"

@@ -80,14 +80,14 @@ getData(project)
 //     return data
 // }
 
-interface ProjectList {
+interface IProjectList {
     id: number,
     name: string
 }
 // const projectList: Array<ProjectList> = [
 //     { id: 1, name: "abcd" }
 // ]
-const projectList: ProjectList[] = [
+const projectList: IProjectList[] = [
     { id: 1, name: "Du an mau" },
     { id: 2, name: "Du an 1" },
     { id: 3, name: "Du an tot nghiep" }
@@ -118,8 +118,50 @@ const getProduct = (props: Product): Product => {
 }
 
 /* Array */
-type ProductList = [number]
-const productList: ProductList = [1, 2, 3]
+type TProductList = number[]
+const productList: TProductList = [1, 2, 3]
 // trong trường hợp này đang báo lỗi, vậy xử lý lỗi này như thế nào -> buổi sau sẽ nói ahihi
 
 /* Function */
+type TAddFunc = (a: number, b: number) => number
+
+
+interface IPerson {
+    email: string
+}
+
+interface IPerson {
+    id: number,
+    name: string
+}
+
+const sontv: IPerson = {
+    id: 1,
+    name: "abc",
+    email: "abc"
+}
+interface IEmployee extends IPerson {
+    position: string,
+    language: string
+}
+const sontv8: IEmployee = {
+    id: 1,
+    name: "sontv",
+    email: "anc",
+    position: "nhan vien",
+    language: "tieng Viet"
+}
+
+type TPerson = {
+    id: number,
+    name: string
+}
+type TEmployee = {
+    email: string
+}
+// type TManager = TPerson & TEmployee
+const datlt: TPerson & TEmployee = {
+    id: 1,
+    name: "datlt",
+    email: "abc"
+}

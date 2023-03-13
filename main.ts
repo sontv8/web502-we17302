@@ -182,4 +182,3 @@ const listProject = (projects) => {
         }).join("")
     }
 }
-listProject(projectList)

@@ -4,7 +4,6 @@ import ProductPage from './pages/Product'
 import ProductDetailPage from './pages/ProductDetail'
 
 function App() {
-
   return (
     <div className="App">
       <Routes>

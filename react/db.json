@@ -1,19 +1,14 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "Product 1",
-            "image": "http://picsum.photo/200/00"
-        },
-        {
-            "id": 2,
-            "name": "Product 2",
-            "image": "http://picsum.photo/200/00"
-        },
-        {
-            "id": 3,
-            "name": "Product 3",
-            "image": "http://picsum.photo/200/00"
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "image": "http://picsum.photo/200/00"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "image": "http://picsum.photo/200/00"
+    }
+  ]
 }

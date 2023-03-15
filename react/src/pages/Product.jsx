@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
 
-const ProductPage = () => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:3000/products')
-            .then(response => response.json())
-            .then(data => setProducts(data))
-    }, [])
+
+const ProductPage = ({ products }) => {
+    const removeProduct = (id) => {
+        fetch('http://localhost:3000/products/' + id, {
+            method: 'DELETE'
+        })
+    }
     return (
         <div>
             <h1>ProductPage</h1>
@@ -15,7 +14,7 @@ const ProductPage = () => {
                     return (
                         <div key={item.id}>
                             <h3>{item.name}</h3>
-                            <button>Remove</button>
+                            <button onClick={() => removeProduct(item.id)}>Remove</button>
                         </div>
                     )
                 })}

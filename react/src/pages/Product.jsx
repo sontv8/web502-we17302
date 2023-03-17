@@ -1,16 +1,21 @@
+import { useEffect, useState } from 'react'
 
-
-const ProductPage = ({ products }) => {
+const ProductPage = (props) => {
+    const [data, setData] = useState([])
+    useEffect(() => {
+        setData(props.products)
+    }, [props])
     const removeProduct = (id) => {
         fetch('http://localhost:3000/products/' + id, {
             method: 'DELETE'
-        })
+        }).then(() => setData(data.filter((item) => item.id !== id)))
     }
+
     return (
         <div>
             <h1>ProductPage</h1>
             <div>
-                {products.map((item) => {
+                {data.map((item) => {
                     return (
                         <div key={item.id}>
                             <h3>{item.name}</h3>

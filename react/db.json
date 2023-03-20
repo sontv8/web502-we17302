@@ -3,6 +3,30 @@
     {
       "id": 1,
       "name": "Product 1"
+    },
+    {
+      "id": 2,
+      "name": "Product 2"
+    },
+    {
+      "id": 3,
+      "name": "Product 3"
+    },
+    {
+      "name": "new product",
+      "id": 4
+    },
+    {
+      "name": "new product 2",
+      "id": 5
+    },
+    {
+      "name": "",
+      "id": 6
+    },
+    {
+      "name": "new product 3",
+      "id": 7
     }
   ]
 }

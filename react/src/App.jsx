@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage'
 import ProductPage from './pages/Product'
 import ProductDetailPage from './pages/ProductDetail'
 import React, { useEffect, useState } from 'react'
-import { deleteProduct, getAllProduct } from './api/product'
+import { addProduct, deleteProduct, getAllProduct } from './api/product'
 import Dashboard from './pages/admin/Dashboard'
 import ProductManagementPage from './pages/admin/ProductManagement'
 import AddProductPage from './pages/admin/AddProduct'
@@ -22,6 +22,10 @@ function App() {
     // }).then(() => setProducts(products.filter((item) => item.id !== id)))
     deleteProduct(id).then(() => setProducts(products.filter((item) => item.id !== id)))
   }
+  const onHandleAdd = (product) => {
+    addProduct(product).then(() => setProducts([...products, product]))
+  }
+  const onHandleUpdate = (product) => { }
   return (
     <div className="App">
       <Routes>
@@ -35,8 +39,9 @@ function App() {
         <Route path='/admin'>
           <Route index element={<Dashboard />} />
           <Route path='products' >
-            <Route index element={<ProductManagementPage />} />
-            <Route path='add' element={<AddProductPage />} />
+            <Route index element={<ProductManagementPage products={products} />} />
+            <Route path='add' element={<AddProductPage onAdd={onHandleAdd} />} />
+
           </Route>
         </Route>
         {/* /admin */}

@@ -13,19 +13,22 @@
       "name": "Product 3"
     },
     {
-      "name": "new product",
+      "name": "New product",
       "id": 4
     },
     {
-      "name": "new product 2",
+      "name": "new product",
+      "price": "500",
       "id": 5
     },
     {
-      "name": "",
+      "name": "abcd",
+      "price": "100",
       "id": 6
     },
     {
-      "name": "new product 3",
+      "name": "hello",
+      "price": "1000",
       "id": 7
     }
   ]

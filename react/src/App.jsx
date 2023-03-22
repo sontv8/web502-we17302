@@ -3,10 +3,11 @@ import HomePage from './pages/HomePage'
 import ProductPage from './pages/Product'
 import ProductDetailPage from './pages/ProductDetail'
 import React, { useEffect, useState } from 'react'
-import { addProduct, deleteProduct, getAllProduct } from './api/product'
+import { addProduct, deleteProduct, getAllProduct, updateProduct } from './api/product'
 import Dashboard from './pages/admin/Dashboard'
 import ProductManagementPage from './pages/admin/ProductManagement'
 import AddProductPage from './pages/admin/AddProduct'
+import UpdateProductPage from './pages/admin/UpdateProduct'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -25,7 +26,9 @@ function App() {
   const onHandleAdd = (product) => {
     addProduct(product).then(() => setProducts([...products, product]))
   }
-  const onHandleUpdate = (product) => { }
+  const onHandleUpdate = (product) => {
+    updateProduct(product).then(() => setProducts(products.map((item) => item.id == product.id ? product : item))) // cập nhật lại sản phẩm
+  }
   return (
     <div className="App">
       <Routes>
@@ -41,7 +44,7 @@ function App() {
           <Route path='products' >
             <Route index element={<ProductManagementPage products={products} />} />
             <Route path='add' element={<AddProductPage onAdd={onHandleAdd} />} />
-
+            <Route path=':id/update' element={<UpdateProductPage onUpdate={onHandleUpdate} products={products} />} />
           </Route>
         </Route>
         {/* /admin */}

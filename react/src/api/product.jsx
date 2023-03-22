@@ -12,5 +12,7 @@ const deleteProduct = (id) => {
 const addProduct = (product) => {
     return instance.post('/products', product)
 }
-
-export { getAllProduct, getOneProduct, deleteProduct, addProduct }
+const updateProduct = (product) => {
+    return instance.put('/products' + product.id, product)
+}
+export { getAllProduct, getOneProduct, deleteProduct, addProduct, updateProduct }

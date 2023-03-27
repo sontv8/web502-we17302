@@ -12,11 +12,21 @@ const UpdateProductPage = (props) => {
     const [inputValue, setInputValue] = useState({}) // khởi tạo state mới để lưu trữ giá trị input
     const onHandleChange = (e) => { // hàm xử lý khi input thay đổi
         const { name, value } = e.target // lấy name và value của input
+        // const name = e.target.name
+        // const value = e.target.value
         setInputValue({ ...inputValue, [name]: value }) // cập nhật lại state
     }
     const onHandleSubmit = (e) => { // hàm xử lý khi submit form
         e.preventDefault() // ngăn chặn reload trang
         props.onUpdate({ ...product, ...inputValue }) // gọi hàm onUpdate từ props và truyền vào sản phẩm cần update
+        /*
+            id:
+            name:
+            price:
+
+            name:
+            price:
+        */
     }
     return (
         <div>

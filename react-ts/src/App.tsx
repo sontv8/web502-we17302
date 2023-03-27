@@ -7,12 +7,9 @@ import HomePage from './pages/HomePage'
 import ProductPage from './pages/Product'
 import { getAllProduct } from './api/product'
 import ProductDetailPage from './pages/ProductDetail'
+import { IProduct } from './types/product'
 
-interface IProduct {
-  id: number,
-  name: string,
-  price: number
-}
+
 function App() {
   const [products, setProduct] = useState<IProduct[]>([])
   useEffect(() => {

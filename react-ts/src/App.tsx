@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import ProductPage from './pages/Product'
-import { getAllProduct } from './api/product'
+import { addProduct, getAllProduct } from './api/product'
 import ProductDetailPage from './pages/ProductDetail'
 import { IProduct } from './types/product'
+import AddProductPage from './pages/admin/AddProduct'
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
   const onHandleRemove = (id: number) => {
 
   }
+  const onHandleAdd = (product) => {
+    addProduct(product)
+  }
   return (
     <div className="App">
       <Routes>
@@ -26,6 +30,11 @@ function App() {
           <Route path='products' >
             <Route index element={<ProductPage products={products} onRemove={onHandleRemove} />} />
             <Route path=':id' element={<ProductDetailPage />} />
+          </Route>
+        </Route>
+        <Route path='/admin'>
+          <Route path='products'>
+            <Route path='add' element={<AddProductPage onAdd={onHandleAdd} />} />
           </Route>
         </Route>
       </Routes>

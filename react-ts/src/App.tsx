@@ -5,10 +5,11 @@ import viteLogo from '/vite.svg'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import ProductPage from './pages/Product'
-import { addProduct, getAllProduct } from './api/product'
+import { addProduct, deleteProduct, getAllProduct } from './api/product'
 import ProductDetailPage from './pages/ProductDetail'
 import { IProduct } from './types/product'
 import AddProductPage from './pages/admin/AddProduct'
+import ProductManagementPage from './pages/admin/ProductManagement'
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
     getAllProduct().then(({ data }) => setProduct(data))
   }, [])
   const onHandleRemove = (id: number) => {
-
+    deleteProduct(id)
   }
   const onHandleAdd = (product) => {
     addProduct(product)
@@ -34,6 +35,7 @@ function App() {
         </Route>
         <Route path='/admin'>
           <Route path='products'>
+            <Route index element={<ProductManagementPage products={products} onRemove={onHandleRemove} />} />
             <Route path='add' element={<AddProductPage onAdd={onHandleAdd} />} />
           </Route>
         </Route>
